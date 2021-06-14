@@ -24,7 +24,7 @@ class NetworkManager {
             if let data = data {
                 let decoder = JSONDecoder()
                 if let convertedData = try? decoder.decode(MarketItems.self, from: data) {
-                    self.convertedData = convertedData
+                    completionHandler(.success(convertedData))
                     print(convertedData)
                 }
             }
